@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include("../includes/header.ejs")%>
+        <link href="/common/style.css" rel="stylesheet">
+        <link href="/edit-form/style.css" rel="stylesheet">
+</head>
+
+
+<body>
+    <%- include("../includes/navbar.ejs")%>
+        <div class="main">
+            <div class="container">
+                <div class="row d-flex justify-content-center">
+                    <form id="edit-form" class="col-md-8 needs-validation" novalidate>
+                        <h2>Editing details of id: <%= data._id %>
+                        </h2>
+                        <div class="mb-3">
+                            <label for="title" class="form-label" name="listing[title]">Title</label>
+                            <input class="form-control" id="title" name="listing[title]" placeholder="Enter title"  
+                                required value=<%=data.title %>>
+                                <div class="invalid-feedback">Title cant be empty!</div>
+                                <div class="valid-feedback">Title seems ok</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea class="form-control" id="description" rows="5" cols="2"
+                                name="listing[description]" required><%=data.description %></textarea>
+                                <div class="invalid-feedback">Description cant be empty!</div>
+                                <div class="valid-feedback">Description seems ok</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="img-link" class="form-label">Image</label>
+                            <input type="type" class="form-control" id="img-link" rows="3" name="listing[image][url]"
+                                placeholder="Enter image link or url"  value=<%=data.image.url %>>
+                        </div>
+                        <div class="row">
+                            <div class="mb-3 col-md-4">
+                                <label for="price" class="form-label">Price</label>
+                                <input  class="form-control" id="price" placeholder="Enter price" rows="3"
+                                    name="listing[price]" required value=<%= data.price %>>
+                                    <div class="invalid-feedback">Price cant be empty!</div>
+                                    <div class="valid-feedback">Title seems ok</div>
+                            </div>
+                            <div class="mb-3 col-md-8">
+                                <label for="location" class="form-label">Location</label>
+                                <input class="form-control" id="location" rows="3" name="listing[location]"
+                                    placeholder="Enter location" required value=<%= data.location %>>
+                                    <div class="invalid-feedback">Location cant be empty!</div>
+                                    <div class="valid-feedback">Location seems ok</div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="country" class="form-label">Country</label>
+                            <input class="form-control" id="country" rows="3" name="listing[country]"
+                                placeholder="Enter country" required value=<%= data.country %>>
+                                <div class="invalid-feedback">Country cant be empty!</div>
+                                <div class="valid-feedback">Country seems ok</div>
+                        </div>
+                        <button id="edit-btn" class="btn btn-danger" _id="<%= data._id%>">Edit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <%- include("../includes/footer.ejs")%>
+</body>
+<script src="/edit-form/script.js"></script>
+
+</html>

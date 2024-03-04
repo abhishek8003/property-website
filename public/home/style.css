@@ -1,0 +1,46 @@
+*{
+    box-sizing: border-box;
+}
+
+.main-card{
+    /* border:2px solid red; */
+    border: none;
+    display: inline-block;
+    min-width:350px;
+    max-width: 30%;
+    margin:0.25rem;
+    min-height: 32rem;
+    padding:0.75rem;
+    transition-property: all;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in;
+
+}
+.main-card:hover{
+    /* border:2px solid red; */
+    /* border:1px solid grey; */
+    opacity: 0.7;
+}
+.main-card img{
+    height: 20rem;
+    width:20rem;
+    border-radius: 10px;
+    transition-property: all;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in;
+
+}
+.main-card img:hover{
+    opacity: 0.7;
+}
+.card-title{
+    font-weight: 700;
+}
+.card-text{
+    font-size: 1.4rem;
+    font-weight: 400;
+}
+.card-link{
+    text-decoration: none;
+    color: black;
+}

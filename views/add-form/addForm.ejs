@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include("../includes/header.ejs")%>
+        <link href="/common/style.css" rel="stylesheet">
+        <link href="/add-form/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <%- include("../includes/navbar.ejs")%>
+    <div class="main">
+        <div class="container">
+            <div class="row d-flex justify-content-center">
+                <form method="POST" action="/listings" class="col-md-8 needs-validation" novalidate>
+                    <h2>Creating a new post</h2>
+                    <div class="mb-3">
+                        <label for="title" class="form-label" name="listing[title]">Title</label>
+                        <input class="form-control" id="title" name="listing[title]" placeholder="Add the name of place" required>
+                        <div class="invalid-feedback">title is wrong!</div>
+                        <div class="valid-feedback">Title seems correct!</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="description" class="form-label">Description</label>
+                        <textarea class="form-control" id="description" rows="5" cols="2" required
+                            name="listing[description]"></textarea>
+                            <div class="valid-feedback">description is OK</div>
+                            <div class="invalid-feedback">description cant be empty!</div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="img-link" class="form-label">Image</label>
+                        <input type="type" class="form-control" id="img-link" rows="3" name="listing[image][url]"
+                            placeholder="Enter image link or url">
+                    </div>
+                    <div class="row">
+                        <div class="mb-3 col-md-4">
+                            <label for="price" class="form-label">Price</label>
+                            <input  class="form-control" id="price" placeholder="Enter price" rows="3"
+                                name="listing[price]" required>
+                            <div class="invalid-feedback">Price cant be empty</div>
+                            <div class="valid-feedback">Price seems correct</div>
+                        </div>
+                        <div class="mb-3 col-md-8">
+                            <label for="location" class="form-label">Location</label>
+                            <input class="form-control" id="loation" rows="3" name="listing[location]"
+                                placeholder="Enter location" required>
+                            <div class="invalid-feedback">Location cant be empty!</div>
+                            <div class="valid-feedback">Location seems correct</div>
+                        </div>
+                    </div>
+                    <div class="mb-3">
+                        <label for="country" class="form-label">Country</label>
+                        <input class="form-control" id="country" rows="3" name="listing[country]"
+                            placeholder="Enter country" required >
+                            <div class="invalid-feedback">country cannot be empty!</div>
+                            <div class="valid-feedback">Country seems correct</div>
+                    </div>
+                    <button class="btn btn-danger">Add</button>
+                </form>
+            </div>
+        </div>
+    </div>
+        <%- include("../includes/footer.ejs")%>
+</body>
+<script src="/add-form/script.js"></script>
+
+</html>

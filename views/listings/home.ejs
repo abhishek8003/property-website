@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wanderlust</title>
+    <%- include("../includes/header.ejs")%>
+        <link href="/home/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <%- include("../includes/navbar.ejs")%>
+        <div class="main">
+            <div class="container-lg card-cont">
+                <h3>All listings</h3>
+                <% for(item of data){ %>
+                    <a href="/show/<%= item.id%>" class="card-link">
+                        <div class="card main-card">
+                            <img src="<%= item.image.url %>" class="card-img-top" alt="...">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title"><i class="fa-regular fa-heart"></i></h5>
+                            </div>
+                            <div class="card-body">
+                                <div>
+                                    <h5 class="card-title">
+                                        <% if(item.title.length>27){%>
+                                            <%= item.title.toString().substr(0,28)+"..." %>
+
+                                                <% } else{%>
+                                                    <%= item.title %>
+                                                        <% }%>
+                                    </h5>
+                                </div>
+                                <p class="card-text">&#8377;<%= item.price.toLocaleString("en-IN")%>
+                                </p>
+                            </div>
+                        </div>
+                    </a>
+                    <% } %>
+            </div>
+        </div>
+
+        <%- include("../includes/footer.ejs")%>
+</body>
+
+
+<%- include("../includes/script_link.ejs")%>
+
+    <script src="/home/script.js"></script>
+
+</html>

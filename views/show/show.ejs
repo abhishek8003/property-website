@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("../includes/header.ejs")%>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="/show/style.css" rel="stylesheet">
+        <title>Document</title>
+
+</head>
+
+<body>
+    <%- include("../includes/navbar.ejs")%>
+        <div class="main container">
+            <div class="row d-flex justify-content-center">
+                <div class="list-cont col-7">
+                    <h2>Listing details
+                    </h2>
+                    <ul>
+                        <image src="<%= data.image.url %>" class="data-img">
+                        <li>
+                            <%= data._id %>
+                        </li>
+                        <li>
+                            <%= data.title %>
+                        </li>
+                        <li>
+                            <%= data.description %>
+                        </li>
+
+                        <li>&#8377;<%= data.price.toLocaleString("en-IN") %>
+                        </li>
+                        <li>
+                            <%= data.location %>
+                        </li>
+                        <li>
+                            <%= data.country %>
+                        </li>
+                    </ul>
+                    <a href="/show/edit-form/<%= data._id %>" class="btn btn-danger">Edit</a>
+                    <button id="del-btn" class="btn btn-dark" _id="<%= data.id %>">Delete</button>
+                </div>
+            </div>
+        </div>
+
+        <%- include("../includes/footer.ejs")%>
+</body>
+
+<%- include("../includes/script_link.ejs")%>
+    <script src="/show/script.js"></script>
+
+
+</html>

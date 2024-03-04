@@ -1,0 +1,17 @@
+body{
+    height: 100vh;
+}
+.main{
+    height: 100vh;
+
+}
+.main-messbox-box{
+    height: 70%;
+    background-color: bisque;
+    font-size: 1.5rem;
+    padding: 0.75rem;
+    border-radius: 10px;
+    margin:10px;
+
+
+}

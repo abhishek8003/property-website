@@ -1,0 +1,45 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+.navbar{
+    height: 5rem;
+    font-size: 1.05rem;
+}
+body{
+    min-height: 100vh;
+}
+.main{
+    min-height: 100vh;
+}
+.fa-compass{
+    font-size: 2rem;
+}
+.nav-link{
+    font-weight: 500;
+    color: #222;
+}
+.footer-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+footer{
+    height:10rem;
+    /* border: 2px solid red; */
+    background-color: #ebebeb;
+}
+.foot-info{
+    /* border: 2px solid green; */
+    height:30%;
+    text-align: center;
+    font-size: 1rem;
+}
+
+.foot-info a{
+    font-size: 1.5rem;
+    text-decoration: none;
+    color:black;
+}
